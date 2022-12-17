@@ -1,17 +1,15 @@
-import { Router } from "./router/Router";
-import "./styles.css";
 
-const user = {
-  name: "フィッシャー",
-  image: "https://source.unsplash.com/NE0XGVKTmcA",
-  email: "1234@example.com",
-  phone: "090-111-2222",
-  company: {
-    name: "test株式会社"
-  },
-  website: "https//google.com"
-};
+import React from "react";
+import "./styles.css";
+import { Router } from "./router/Router";
+import { UserProvider } from "./providers/UserProvider";
+import { RecoilRoot } from "recoil";
 
 export default function App() {
-  return <Router />;
-}
+  return (
+    <RecoilRoot>
+      <UserProvider>
+        <Router />
+      </UserProvider>
+    </RecoilRoot>
+  )}

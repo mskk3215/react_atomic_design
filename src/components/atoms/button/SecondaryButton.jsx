@@ -3,8 +3,9 @@ import { BaseButton } from "./BaseButton";
 
 //このconponentの役割はなんなのか？という意識することが大切
 export const SecondaryButton = (props) => {
-  const { children } = props;
-  return <SButton>{children}</SButton>;
+
+  const { children, onClick } = props;
+  return <SButton onClick={onClick}>{children}</SButton>;
 };
 
 const SButton = styled(BaseButton)`
